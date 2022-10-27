@@ -1,23 +1,29 @@
 {
-	"scripts": {
-		"transpile": "ngc",
-		"package": "rollup -c",
-		"minify": "uglifyjs dist/bundles/ng2-ace-editor.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng2-ace-editor.umd.min.js",
-		"build": "npm run transpile && npm run package && npm run minify"
-	},
-	"devDependencies": {
-		"@angular/common": "^7.0.0",
-		"@angular/compiler": "^7.0.0",
-		"@angular/compiler-cli": "^7.0.0",
-		"@angular/core": "^7.0.0",
-		"@angular/forms": "^7.0.0",
-		"@angular/platform-browser": "^7.0.0",
-		"rollup": "^1.1.0",
-		"rollup-plugin-angular": "^0.5.3",
-		"rollup-plugin-typescript2": "^0.19.0",
-		"rxjs": "^6.3.3",
-		"typescript": "^3.2.2",
-		"uglify-js": "^3.4.9",
-		"zone.js": "^0.8.27"
-	}
+  "name": "ng-ace-editor",
+  "version": "1.0.0",
+  "scripts": {
+    "transpile": "ngc",
+    "package": "rollup -c rollup.config.js --bundleConfigAsCjs",
+    "minify": "uglifyjs dist/bundles/ng-ace-editor.js --compress --mangle --comments --output dist/bundles/ng-ace-editor.min.js",
+    "build": "npm run transpile && npm run package && npm run minify && npm pack"
+  },
+  "devDependencies": {
+    "@angular/common": "^14.2.8",
+    "@angular/compiler": "^14.2.8",
+    "@angular/compiler-cli": "^14.2.8",
+    "@angular/core": "^14.2.8",
+    "@angular/forms": "^14.2.8",
+    "@angular/platform-browser": "^14.2.8",
+    "rollup": "^3.2.3",
+    "rollup-plugin-angular": "^0.5.3",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "rxjs": "^6.3.3",
+    "typescript": "^4.8.4",
+    "uglify-js": "^3.4.9",
+    "zone.js": "^0.11.8"
+  },
+  "dependencies": {
+    "ace-builds": "^1.12.3",
+    "brace": "^0.11.1"
+  }
 }
